@@ -2,6 +2,13 @@ const express = require("express");
 const router = express.Router();
 const db = require("../db/db");
 
+router.get("/", (req, res) => {
+  res.send({
+    hi: "Hello",
+    there: "Some data",
+  });
+});
+
 router.post("/integrations", async (req, res) => {
   const v = await db("person")
     .insert({
