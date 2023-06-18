@@ -4,9 +4,9 @@
  * @type { Object.<string, import("knex").Knex.Config> }
  */
 
-import dotenv from "dotenv";
+// import dotenv from "dotenv";
 
-dotenv.config();
+// dotenv.config();
 
 module.exports = {
   development: {
