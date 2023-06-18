@@ -3,14 +3,20 @@
 /**
  * @type { Object.<string, import("knex").Knex.Config> }
  */
+
+import dotenv from "dotenv";
+
+dotenv.config();
+
 module.exports = {
   development: {
     client: "postgresql",
-    connection: {
-      database: "chat_backend",
-      user: "am",
-      password: null,
-    },
+    connection: process.env.DATABASE_URL,
+    // connection: {
+    //   database: "chat_backend",
+    //   user: "am",
+    //   password: null,
+    // },
     pool: {
       min: 2,
       max: 10,
@@ -23,7 +29,7 @@ module.exports = {
   production: {
     client: "postgresql",
     connection: {
-      database: "my_db",
+      database: "railway",
       user: "username",
       password: "password",
     },
