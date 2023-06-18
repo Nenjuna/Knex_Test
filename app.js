@@ -5,6 +5,6 @@ const app = express();
 app.use(express.json());
 app.use(router);
 
-app.listen(8000, () => {
+app.listen(process.end.PORT, () => {
   console.log("Server running on port 8000");
 });
