@@ -39,4 +39,9 @@ router.post("/movies", async (req, res) => {
   });
 });
 
+router.get("/movies", async (req, res) => {
+  const movies = await db.select().from("movies");
+  res.status(201).json({ data: movies });
+});
+
 module.exports = router;
