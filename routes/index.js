@@ -22,21 +22,27 @@ router.post("/integrations", async (req, res) => {
 
 router.post("/movies", async (req, res) => {
   const { name, cast, music, director, lyrics, year, rating } = req.body;
-  const ins = await db("movies")
-    .insert({
-      name,
-      cast,
-      music,
-      director,
-      lyrics,
-      year,
-      rating,
-    })
-    .returning("*");
+  try {
+    const ins = await db("movies")
+      .insert({
+        name,
+        cast,
+        music,
+        director,
+        lyrics,
+        year,
+        rating,
+      })
+      .returning("*");
 
-  res.status(201).json({
-    data: ins,
-  });
+    res.status(201).json({
+      data: ins,
+    });
+  } catch (error) {
+    res
+      .status(500)
+      .json({ error: "Error adding the movie, check if it already exists" });
+  }
 });
 
 router.get("/movies", async (req, res) => {
