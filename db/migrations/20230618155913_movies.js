@@ -5,7 +5,7 @@
 exports.up = function (knex) {
   return knex.schema.createTable("movies", (table) => {
     table.increments("id").primary();
-    table.string("name");
+    table.unique("name");
     table.string("cast");
     table.string("music");
     table.string("director");
