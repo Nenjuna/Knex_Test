@@ -6,7 +6,7 @@
 
 // dotenv.config();
 const path = require("path");
-// require("dotenv").config({ path: path.resolve(__dirname, "../.env") });
+require("dotenv").config({ path: path.resolve(__dirname, "../.env") });
 console.log(process.env.DATABASE_URL);
 
 module.exports = {
@@ -14,7 +14,7 @@ module.exports = {
     client: "postgresql",
     connection: process.env.DATABASE_URL,
     pool: {
-      min: 2,
+      min: 5,
       max: 10,
     },
     migrations: {
