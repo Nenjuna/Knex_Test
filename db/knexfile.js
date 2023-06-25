@@ -12,7 +12,7 @@ console.log(process.env.DATABASE_URL);
 module.exports = {
   development: {
     client: "postgresql",
-    connection: process.env.DATABASE_URL,
+    connection: process.env.EE,
     pool: {
       min: 5,
       max: 10,
