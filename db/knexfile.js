@@ -7,7 +7,7 @@
 // dotenv.config();
 const path = require("path");
 // require("dotenv").config({ path: path.resolve(__dirname, "../.env") });
-console.log(process.env.EX);
+console.log(process.env.DATABASE_URL);
 
 module.exports = {
   development: {
